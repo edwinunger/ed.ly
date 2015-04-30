@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Welcome to Ed.ly!</h1>
+
+  <h3>Please enter a URL you'd like to shorten:</h3>
+  <form action="/urls" method="post">
+    <input type="text" name="url" placeholder="Enter URL"/>
+
+    <input type="submit" value="Edify!"/>
+  </form>
+
+  <br>
+  <br>
+
+  <ul><h2>Recently shortened URLs:</h2>
+  <% (@urls.last(5)).each do |url| %>
+  <h4><li><%= url.url %> => <a href="<%= url.url %>"><%= url.shortened_url %></a></li></h4>
+  <% end %>
+
+</div>
